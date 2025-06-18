@@ -89,13 +89,7 @@ const Info = () => {
         ))}
 
         {/* Pregnancy Category */}
-        <div className="card">
-          <h2>Pregnancy Category</h2>
-          <p>
-            <strong>Category C:</strong> Use only if clearly needed and
-            benefits outweigh risks.
-          </p>
-        </div>
+      
 
         {/* Brands Table */}
         <div className="card">
