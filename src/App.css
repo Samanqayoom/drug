@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+.container {
+  display: flex;
+  height: 100vh;
+}
+.left-section {
+  flex: 1;
+  background-color: #f5f7ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.left-section .illustration {
+  width: 70%;
+  max-width: 400px;
+}
+.right-section {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+button {
+  cursor: pointer;
+}

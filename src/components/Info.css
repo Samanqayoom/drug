@@ -1,0 +1,130 @@
+/* Card container */
+.image-container {
+  text-align: center;
+  margin: 20px auto;
+}
+
+.image-container img {
+  max-width: 100%;
+  width: 400px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border: 2px solid #1e40af; /* Optional border for visibility */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.6s ease-in-out;
+}
+.vitamin-img {
+  max-width: 100%;
+  width: 400px;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  border: 2px solid #1e40af;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+.card-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f9fafb;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Card style */
+.card {
+  background-color: #ffffff;
+  border-left: 6px solid #3b82f6; /* blue-500 */
+  border-radius: 16px;
+  padding: 20px 25px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.6s ease-in-out;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+/* Card heading */
+.card h2 {
+  font-size: 20px;
+  color: #1e40af; /* blue-800 */
+  margin-bottom: 10px;
+}
+
+/* Card content */
+.card p {
+  font-size: 16px;
+  color: #374151; /* gray-700 */
+  line-height: 1.6;
+  white-space: pre-line;
+}
+
+/* Page title */
+.page-title {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #1d4ed8;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+brands-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.brands-table th,
+.brands-table td {
+  border: 1px solid #ddd;
+  padding: 30px;
+  text-align: center;
+}
+
+.brands-table th {
+  background-color: #f2f2f2;
+}
+
+.card a {
+  color: #007bff;
+  text-decoration: none;
+}
+.brand-images-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+  justify-items: center;
+}
+
+.brand-images-grid img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  padding: 5px;
+}
+.image-heading {
+  text-align: center;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #333;
+}
