@@ -93,7 +93,7 @@ brands-table {
 .brands-table th,
 .brands-table td {
   border: 1px solid #ddd;
-  padding: 30px;
+  padding: 8px;
   text-align: center;
 }
 
@@ -128,3 +128,22 @@ brands-table {
   margin-bottom: 10px;
   color: #333;
 }
+
+.logo-container {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.logo-image {
+  width: 120px;
+  height: auto;
+}
+
+.logo-name {
+  margin-top: 8px;
+  font-size: 24px;
+  color: #333;
+  font-weight: bold;
+}
+

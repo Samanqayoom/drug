@@ -1,19 +1,24 @@
 import React from "react";
 import "./Info.css";
 import formulaPic from "../assets/CHO.jpg";
-// Top of the file
 import brand1 from "../assets/IMG-20250618-WA0007.jpg";
 import brand2 from "../assets/IMG-20250618-WA0013.jpg";
 import brand3 from "../assets/IMG-20250618-WA0014.jpg";
 import brand4 from "../assets/IMG-20250618-WA0015.jpg";
 import brand5 from "../assets/Vitamin3.jpg";
 import brand6 from "../assets/IMG-20250618-WA0017.jpg";
+import logo from "../assets/umts.jpg";
 
-
+// Sections data
 const sections = [
   {
     title: "Description / Monograph",
     content: `Cholecalciferol is a fat-soluble vitamin (Vitamin D3) synthesized in the skin on exposure to sunlight (UVB radiation). It plays a vital role in calcium and phosphorus homeostasis and bone mineralization. It is also used in the prevention and treatment of Vitamin D deficiency and related disorders.`,
+  },
+  {
+    title: "Formula and Structure",
+    content: "",
+    image: formulaPic,
   },
   {
     title: "Indications",
@@ -53,125 +58,123 @@ const sections = [
   },
 ];
 
-const Card = ({ title, content }) => (
+// Card component
+const Card = ({ title, content, image }) => (
   <div className="card">
     <h2>{title}</h2>
-    <p style={{ whiteSpace: "pre-line" }}>{content}</p>
+    {content && <p style={{ whiteSpace: "pre-line" }}>{content}</p>}
+    {image && <img src={image} alt={title} className="vitamin-img" />}
   </div>
 );
 
+// Main component
 const Info = () => {
   return (
-    <div className="card-container">
-      <h1 className="page-title">Cholecalciferol (Vitamin D3) Details</h1>
+    <>
+      <div className="logo-container">
+        <img src={logo} alt="Drug Info Logo" className="logo-image" />
+        
+      </div>
 
-      {sections.map((section, index) => (
-        <div key={index}>
-          <Card title={section.title} content={section.content} />
+      <div className="card-container">
+        <h1 className="page-title">Cholecalciferol (Vitamin D3) Details</h1>
 
-          {/* Image after Description section */}
-          {index === 0 && (
-            <div className="image-container">
-                  <h3 className="image-heading">Formula and Structure</h3>
-              <img
-                src={formulaPic}
-                alt="Cholecalciferol Structure"
-                className="vitamin-img"
-              />
-            </div>
-          )}
+        {sections.map((section, index) => (
+          <Card
+            key={index}
+            title={section.title}
+            content={section.content}
+            image={section.image}
+          />
+        ))}
+
+        {/* Pregnancy Category */}
+        <div className="card">
+          <h2>Pregnancy Category</h2>
+          <p>
+            <strong>Category C:</strong> Use only if clearly needed and
+            benefits outweigh risks.
+          </p>
         </div>
-      ))}
 
-      {/* Pregnancy Category */}
-      <div className="card">
-        <h2>Pregnancy Category</h2>
-        <p>
-          <strong>Category C:</strong> Use only if clearly needed and benefits
-          outweigh risks.
-        </p>
-      </div>
+        {/* Brands Table */}
+        <div className="card">
+          <h2>Common Brands Available in Pakistan</h2>
+          <table className="brands-table">
+            <thead>
+              <tr>
+                <th>Brand Name</th>
+                <th>Strength</th>
+                <th>Dosage Form</th>
+                <th>Route</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Vita-D</td>
+                <td>10000 IU</td>
+                <td>Tablet</td>
+                <td>Oral</td>
+              </tr>
+              <tr>
+                <td>D-Sun</td>
+                <td>5000 IU</td>
+                <td>Drop</td>
+                <td>Oral</td>
+              </tr>
+              <tr>
+                <td>Sglndrop-D</td>
+                <td>5000 IU</td>
+                <td>Softgel capsules</td>
+                <td>Oral</td>
+              </tr>
+              <tr>
+                <td>Indrop-D</td>
+                <td>1 mL</td>
+                <td>Softgel capsules</td>
+                <td>Oral</td>
+              </tr>
+              <tr>
+                <td>Sterol-D</td>
+                <td>5000 IU</td>
+                <td>SoftGelCaps</td>
+                <td>Oral</td>
+              </tr>
+            </tbody>
+          </table>
 
-
-      {/* Brands Table */}
-      <div className="card">
-        <h2>Common Brands Available in Pakistan</h2>
-        <table className="brands-table">
-          <thead>
-            <tr>
-              <th>Brand Name</th>
-              <th>Strength</th>
-              <th>Dosage Form</th>
-              <th>Route</th>
-            </tr>
-          </thead>
-          <tbody>
-           
-            <tr>
-              <td>Vita-D</td>
-              <td>10000 IU</td>
-              <td>Tablet</td>
-              <td>Oral</td>
-            </tr>
-            <tr>
-              <td>D-Sun</td>
-              <td>5000 IU</td>
-              <td>Drop</td>
-              <td>Oral</td>
-            </tr>
-            <tr>
-              <td>Sglndrop-D</td>
-              <td>5000 IU</td>
-              <td>Softgel capsules</td>
-              <td>Oral</td>
-            </tr>
-            <tr>
-              <td>Indrop-D</td>
-              <td>1 mL</td>
-              <td>Softgel capsules</td>
-              <td>Oral</td>
-            </tr>
-
-            <tr>
-              <td>Sterol-D</td>
-              <td>5000 IU</td>
-              <td>SoftGelCaps</td>
-              <td>Oral</td>
-            </tr>
-          </tbody>
-        </table>
-          {/* Brand Images Grid */}
-  <div className="brand-images-grid">
-    <img src={brand1} alt="Brand 1" />
-    <img src={brand2} alt="Brand 2" />
-    <img src={brand3} alt="Brand 3" />
-    <img src={brand4} alt="Brand 4" />
-    <img src={brand5} alt="Brand 5" />
-    <img src={brand6} alt="Brand 6" />
-  </div>
-      </div>
+          {/* Brand Images */}
+          <div className="brand-images-grid">
+            <img src={brand1} alt="Brand 1" />
+            <img src={brand2} alt="Brand 2" />
+            <img src={brand3} alt="Brand 3" />
+            <img src={brand4} alt="Brand 4" />
+            <img src={brand5} alt="Brand 5" />
+            <img src={brand6} alt="Brand 6" />
+          </div>
+        </div>
 
         {/* Brochure Link */}
-      <div className="card">
-        <h2>Brochure Link</h2>
-        <a href="#" target="_blank" rel="noopener noreferrer">
-          Download Brochure (PDF)
-        </a>
-      </div>
+        <div className="card">
+          <h2>Brochure Link</h2>
+          <a href="#" target="_blank" rel="noopener noreferrer">
+            Download Brochure (PDF)
+          </a>
+        </div>
 
-      {/* References */}
-      <div className="card">
-        <h2>References</h2>
-        <ul>
-          <li>British National Formulary (BNF)</li>
-          <li>United States Pharmacopeia (USP)</li>
-          <li>FDA and WHO Guidelines</li>
-          <li>pharmapedia</li>
-          <li>Drug Monograph: Cholecalciferol - Micromedex</li>
-          
-        </ul>
+        {/* References */}
+        <div className="card">
+          <h2>References</h2>
+          <ul>
+            <li>British National Formulary (BNF)</li>
+            <li>United States Pharmacopeia (USP)</li>
+            <li>FDA and WHO Guidelines</li>
+            <li>pharmapedia</li>
+            <li>Drug Monograph: Cholecalciferol - Micromedex</li>
+          </ul>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
